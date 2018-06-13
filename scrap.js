@@ -13,6 +13,8 @@ async function scrape(codigo) {
     const page = await browser.newPage();
     // let codigo = "LB130144332SE";
     const servico = "ect";
+
+    // tirando inutilidades da pagina 
     await page.setRequestInterception(true);
     page.on('request', (request) => {
         if (['image', 'stylesheet', 'font', 'script'].indexOf(request.resourceType()) !== -1) {
@@ -22,6 +24,9 @@ async function scrape(codigo) {
         }
     });
     await page.goto('http://websro.com.br/detalhes.php?P_COD_UNI=' + codigo);
+
+    //vai criar array elements, processar os dados e inserir no array dados
+    //historico = array de json
     const historico = await page.evaluate(() => {
         let dados = [];
         let elements = document.querySelector('tbody').querySelectorAll('tr');
@@ -50,6 +55,7 @@ async function scrape(codigo) {
         return dados;
     });
     await browser.close();
+    // retorna json no formato {String, String, [{datalhes, local, data, situacao}]}
     return { codigo, servico, historico };
 };
 
@@ -59,7 +65,7 @@ app.get('/:trackingCode', async function (req, res) {
         let saida = await scrape(req.params['trackingCode']);
         return res.json(saida);
     }
-    catch(ex){
+    catch(ex){ //caso de erro como pacote não encontrado, inválido, etc, retorna array {trackingCode, 'error', []}
         let codigo = req.params['trackingCode'];
         let servico = 'error';
         let historico = [];
