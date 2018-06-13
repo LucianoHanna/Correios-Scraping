@@ -4,7 +4,7 @@ const app = express();
 
 async function scrape(codigo) {
     const browser = await puppeteer.launch({
-        headless: false,
+        headless: true,
         args: [
             '--proxy-server="direct://"',
             '--proxy-bypass-list=*'
