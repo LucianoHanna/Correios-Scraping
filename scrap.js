@@ -12,9 +12,16 @@ async function scrape(codigo) {
     });
     const page = await browser.newPage();
     // let codigo = "LB130144332SE";
-    const servico = "ect"
+    const servico = "ect";
+    await page.setRequestInterception(true);
+    page.on('request', (request) => {
+        if (['image', 'stylesheet', 'font', 'script'].indexOf(request.resourceType()) !== -1) {
+            request.abort();
+        } else {
+            request.continue();
+        }
+    });
     await page.goto('http://websro.com.br/detalhes.php?P_COD_UNI=' + codigo);
-
     const historico = await page.evaluate(() => {
         let dados = [];
         let elements = document.querySelector('tbody').querySelectorAll('tr');
