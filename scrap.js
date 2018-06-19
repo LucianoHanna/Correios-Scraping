@@ -29,13 +29,13 @@ async function main(){
         
         await page.goto('http://www2.correios.com.br//sistemas/rastreamento/default.cfm/');
     
-        const PESQUISA_SELECTOR = '#objetos';
-        const BUTTON_SELECTOR = '#btnPesq';
+        //const PESQUISA_SELECTOR = '#objetos';
+        //const BUTTON_SELECTOR = '#btnPesq';
     
-        await page.click(PESQUISA_SELECTOR);
+        await page.click('#objetos');
         await page.keyboard.type(codigo);
     
-        await page.click(BUTTON_SELECTOR);
+        await page.click('#btnPesq');
     
         await page.waitForNavigation();
     
