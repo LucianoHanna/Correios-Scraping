@@ -1,0 +1,23 @@
+{
+  "name": "correios-scraping",
+  "version": "1.0.0",
+  "description": "",
+  "main": "scrap.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/LucianoHanna/Correios-Scraping.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/LucianoHanna/Correios-Scraping/issues"
+  },
+  "homepage": "https://github.com/LucianoHanna/Correios-Scraping#readme",
+  "dependencies": {
+    "express": "^4.16.3",
+    "puppeteer": "^1.5.0"
+  }
+}
