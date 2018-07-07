@@ -34,7 +34,7 @@ async function main(){
         
         await Promise.all([
             page.click('#btnPesq'),
-            page.waitForNavigation({ waitUntil: 'networkidle2' }),
+            page.waitForNavigation(),
           ]);
 
         let historico = [];
