@@ -86,7 +86,9 @@ async function main(){
         return res.json(saida);
     });
     
-    app.listen(3000, () => console.log("Escutando porta 3000"));
+    const { port } = require('./config');
+
+    app.listen(port, () => console.log(`Escutando porta ${port}`));
     
 }
 
