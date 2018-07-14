@@ -14,7 +14,6 @@ async function main(){
 
     async function scrape(codigo) {
         const page = await browser.newPage();
-        // let codigo = "LB130144332SE";
         let servico = 'ect';
     
         // tirando inutilidades da pagina 
