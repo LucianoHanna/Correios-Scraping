@@ -80,14 +80,14 @@ async function main(){
         // retorna json no formato {String, String, [{datalhes, local, data, situacao}]}
         return { codigo, servico, historico };
     };
+
+    const { path, port } = require('./config');
     
-    app.get('/:trackingCode', async function (req, res) {
+    app.get(`${path}:trackingCode`, async function (req, res) {
         let saida = await scrape(req.params['trackingCode']);
         return res.json(saida);
     });
     
-    const { port } = require('./config');
-
     app.listen(port, () => console.log(`Escutando porta ${port}`));
     
 }
