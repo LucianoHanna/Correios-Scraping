@@ -3,7 +3,7 @@ Rastreamento da Empresa de Correios e Telégrafos utilizando Data Scraping e Pup
 
 ## Downloads
 - Código-fonte no [GitHub](https://github.com/LucianoHanna/Correios-Scraping)
-- Baixe diretamente do [NPM]()
+- Baixe diretamente do [NPM](http://npmjs.com/package/correios-tracking)
 
 ## Instalação
 
