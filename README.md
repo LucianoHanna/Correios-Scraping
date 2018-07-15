@@ -15,7 +15,8 @@ Correios-Scraping funciona com Data Scraping da página do Correios e retornando
 ## Como utilizar
 É simples de utilizar, veja um exemplo de código:
 
-```const Scraping = require('../scrap.js');
+```
+const Scraping = require('../scrap.js');
 const correios = new Scraping();
 
 // É necessário abrir o Chromium antes de rastrear qualquer objeto
@@ -25,11 +26,13 @@ correios.launchBrowser();
 console.log(correios.track('PP123456789BR'));
 
 // Após os rastreios desejados serem feitos, pode ser fechado o Chromium
-correios.closeBrowser();```
+correios.closeBrowser();
+```
 
 Observe que é possivel fazer mais de um rastreio após abrir o Chromium:
 
-```const Scraping = require('../scrap.js');
+```
+const Scraping = require('../scrap.js');
 const correios = new Scraping();
 
 // É necessário abrir o Chromium antes de rastrear qualquer objeto
@@ -41,4 +44,5 @@ console.log(correios.track('PP123456789BR'));
 console.log(correios.track('PP123456789BR'));
 
 // Após os rastreios desejados serem feitos, pode ser fechado o Chromium
-correios.closeBrowser();```
+correios.closeBrowser();
+```
