@@ -4,7 +4,7 @@ module.exports = class Scraping {
     // Esta função deve ser chamada inicialmente para abrir o Chromium
     async launchBrowser(){
         this.browser = await puppeteer.launch({
-            headless: false,
+            headless: true,
             args: [
                 '--proxy-server="direct://"',
                 '--proxy-bypass-list=*'
