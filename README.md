@@ -49,5 +49,5 @@ console.log(correios.track('PP123456789BR'));
 correios.closeBrowser();
 ```
 
-## Veja a demonstração:
+## Demonstração:
 Tem um demo dentro deste repositório, apenas clone e você encontrará dentro a pasta "demo", execute ```npm install && node demo.js``` e você verá retornar json no metódo GET do link "localhost:3000/:codigo_de_rastreio", substitua ":codigo_de_rastreio" por um código de rastreio válido.
