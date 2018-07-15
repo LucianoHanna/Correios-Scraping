@@ -48,3 +48,6 @@ console.log(correios.track('PP123456789BR'));
 // Após os rastreios desejados serem feitos, pode ser fechado o Chromium
 correios.closeBrowser();
 ```
+
+## Veja a demonstração:
+Tem um demo dentro deste repositório, apenas clone e você encontrará dentro a pasta "demo", execute ```npm install && node demo.js``` e você verá retornar json no metódo GET do link "localhost:3000/:codigo_de_rastreio", substitua ":codigo_de_rastreio" por um código de rastreio válido.
