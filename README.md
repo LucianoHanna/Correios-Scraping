@@ -7,7 +7,9 @@ Rastreamento da Empresa de Correios e Telégrafos utilizando Data Scraping e Pup
 
 ## Instalação
 
-
+```
+npm install correios-tracking
+```
 
 ## Como funciona
 Correios-Scraping funciona com Data Scraping da página do Correios e retornando json com o rastreio do objeto passado como parametro.
