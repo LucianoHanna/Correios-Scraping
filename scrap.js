@@ -18,7 +18,7 @@ module.exports = class Scraping {
     }
     
     // Esta função retorna json com o rastreio do objeto passado como parametro
-    async scrape(codigo) {
+    async track(codigo) {
         const page = await this.browser.newPage();
         let servico = 'ect';
     

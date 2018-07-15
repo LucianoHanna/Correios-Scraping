@@ -8,7 +8,7 @@ correios.launchBrowser();
 const { path, port } = require('./config');
     
 app.get(`${path}:trackingCode`, async function (req, res) {
-    let saida = await correios.scrape(req.params['trackingCode']);
+    let saida = await correios.track(req.params['trackingCode']);
     return res.json(saida);
 });
 
