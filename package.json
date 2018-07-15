@@ -1,7 +1,7 @@
 {
   "name": "correios-scraping",
   "version": "1.0.0",
-  "description": "",
+  "description": "Data Scraping for Correios website",
   "main": "scrap.js",
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
@@ -10,14 +10,13 @@
     "type": "git",
     "url": "git+https://github.com/LucianoHanna/Correios-Scraping.git"
   },
-  "author": "",
+  "author": "Luciano Hanna",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/LucianoHanna/Correios-Scraping/issues"
   },
   "homepage": "https://github.com/LucianoHanna/Correios-Scraping#readme",
   "dependencies": {
-    "express": "^4.16.3",
     "puppeteer": "^1.5.0"
   }
 }
