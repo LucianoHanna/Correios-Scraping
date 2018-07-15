@@ -1,19 +1,25 @@
 const puppeteer = require('puppeteer');
-const express = require('express');
-const app = express();
 
-async function main(){
+module.exports = class Scraping {
+    // Esta função deve ser chamada inicialmente para abrir o Chromium
+    async launchBrowser(){
+        this.browser = await puppeteer.launch({
+            headless: false,
+            args: [
+                '--proxy-server="direct://"',
+                '--proxy-bypass-list=*'
+            ]
+        });
+    }
 
-    const browser = await puppeteer.launch({
-        headless: true,
-        args: [
-            '--proxy-server="direct://"',
-            '--proxy-bypass-list=*'
-        ]
-    });
-
-    async function scrape(codigo) {
-        const page = await browser.newPage();
+    // Esta função deve ser chamada para fechar o Chromium
+    async closeBrowser(){
+        this.browser.close();
+    }
+    
+    // Esta função retorna json com o rastreio do objeto passado como parametro
+    async scrape(codigo) {
+        const page = await this.browser.newPage();
         let servico = 'ect';
     
         // tirando inutilidades da pagina 
@@ -79,16 +85,4 @@ async function main(){
         // retorna json no formato {String, String, [{datalhes, local, data, situacao}]}
         return { codigo, servico, historico };
     };
-
-    const { path, port } = require('./config');
-    
-    app.get(`${path}:trackingCode`, async function (req, res) {
-        let saida = await scrape(req.params['trackingCode']);
-        return res.json(saida);
-    });
-    
-    app.listen(port, () => console.log(`Escutando porta ${port}`));
-    
 }
-
-main();
