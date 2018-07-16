@@ -51,3 +51,7 @@ correios.closeBrowser();
 
 ## Demonstração:
 Tem um demo dentro deste repositório, apenas clone e você encontrará dentro a pasta "demo", execute ```npm install && node demo.js``` e você verá retornar json no metódo GET do link "localhost:3000/:codigo_de_rastreio", substitua ":codigo_de_rastreio" por um código de rastreio válido.
+
+## Licença
+
+Esse projeto está licenciado sob a licença MIT - veja o arquivo [LICENSE.md](LICENSE.md) para mais detalhes.
