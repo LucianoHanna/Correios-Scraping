@@ -11,7 +11,7 @@
     "url": "git+https://github.com/LucianoHanna/Correios-Scraping.git"
   },
   "author": "Luciano Hanna",
-  "license": "ISC",
+  "license": "MIT",
   "bugs": {
     "url": "https://github.com/LucianoHanna/Correios-Scraping/issues"
   },
