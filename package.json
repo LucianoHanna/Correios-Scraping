@@ -1,6 +1,6 @@
 {
   "name": "correios-tracking",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "Data Scraping of Correios website",
   "main": "scrap.js",
   "scripts": {
