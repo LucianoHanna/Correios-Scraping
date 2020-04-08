@@ -49,12 +49,12 @@ module.exports = class Scraping {
         try{
             historico = await page.evaluate(() => {
                 let dados = [];
-                let elements = document.querySelector('tbody').querySelectorAll('tr');
+                let elements = document.querySelectorAll('.listEvent');
                 for (var element of elements) {
                     let localAndDate = element.querySelector('td').innerText;
                     localAndDate = localAndDate.split('\n');
                     let local = localAndDate[2];
-                    let data = localAndDate[0]+localAndDate[1];
+                    let data = localAndDate[0]+' '+localAndDate[1];
                     let detalhes = element.querySelectorAll('td')[1].innerText;
                     let situacao = element.querySelectorAll('td')[1].querySelector('strong').innerText;
         
